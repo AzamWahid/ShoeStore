@@ -28,8 +28,8 @@ const shoes = {
 export const GlobalContext = createContext(shoes);
 
 
-export const GlobalProvider = () => {
+export const GlobalProvider = ({ children }) => {
 return (
-    <GlobalContext.Provider value={{shoes}}> </GlobalContext.Provider>
+    <GlobalContext.Provider value={{shoes}}>      {children} </GlobalContext.Provider>
   )
 }

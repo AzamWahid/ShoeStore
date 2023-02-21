@@ -11,7 +11,7 @@ import { GlobalProvider } from './context/GlobalState';
 function App() {
   return (
     <div className="App">
-      {/* <GlobalProvider> */}
+      <GlobalProvider>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -23,7 +23,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      {/* </GlobalProvider> */}
+      </GlobalProvider>
     </div>
   );
 }

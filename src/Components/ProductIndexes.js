@@ -1,30 +1,12 @@
-import React from 'react'
-import RedLabel from '../Images/RedLabel.jpg'
-import GS7914 from '../Images/GS7914-1.jpg'
-import SNEAKER from '../Images/SNEAKER SS-2151.jpg'
-import weinbrenner from '../Images/weinbrenner.jpg'
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { GlobalContext } from "../context/GlobalState";
+
 
 const ProductIndexes = () => {
 
-    const shoes = {
-        'shoe1': {
-            Name: "RedLabel",
-            image: RedLabel
-        },
-        'shoe2': {
-            Name: "GS7914-1",
-            image: GS7914
-        }, 
-         'shoe3': {
-            Name: "SNEAKER",
-            image: SNEAKER
-        },
-        'shoe4': {
-            Name: "weinbrenner",
-            image: weinbrenner
-        }
-    }
+    const {shoes} = useContext(GlobalContext);
+
 
     return (
         <div>
@@ -33,7 +15,7 @@ const ProductIndexes = () => {
                 {Object.entries(shoes).map(([id, { Name, image }]) => {
                     return (
                         <li key={id}>
-                        <Link to={id}>
+                        <Link to={`/products/${id}`}>
                             {Name} <br/>
                             <img src={image} alt={Name} width={"50%"} height={"500vh"}></img>
                         </Link>
